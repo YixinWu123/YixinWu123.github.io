@@ -1,292 +1,438 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Yunjie Tian — Computer Vision & Multimodal Learning" />
+  <title>Yunjie Tian · 田运杰</title>
 
-<HTML>
-<HEAD>
-  <META content="IE=5.0000" http-equiv="X-UA-Compatible">
-  <META name="description" content="Yunjie Tian's home page"> 
-  <META http-equiv="Content-Type" content="text/html; charset=gb2312">
-  <LINK href="files/doc.css" 
-    rel="stylesheet" type="text/css"> 
-  <TITLE>Yunjie Tian 田运杰</TITLE> 
-  <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
-</HEAD>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Yunjie Tian — Computer Vision & Multimodal Learning" />
+  <meta property="og:description" content="Postdoctoral Associate at University at Buffalo. Research in representation learning, object detection, and multimodal LLMs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="files/susu.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>��</text></svg>">
 
-<BODY> 
-  <DIV id="layout-content" style="margin-top: 25px;">
-  <TABLE>
-    <TBODY>
-    <TR>
-      <TD width="670">
-        <DIV id="toptitle">
-        <H1>Yunjie Tian &nbsp;</H1></DIV>
-        <H3>Postdoctoral Associate</H3>
-        <P>Room 301B, Davis Hall 
-        <BR>Department of Computer Science and Engineering
-        <BR>University at Buffalo, SUNY
-        <BR>Buffalo, New York, USA, 14260
-        <BR>
-        <BR> Email:  
-        <A href="mailto:tianyunjie96@gmail.com"> tianyunjie96@gmail.com</A>; 
-        <BR> Google scholar:
-        <A href="https://scholar.google.com/citations?user=DooPOjIAAAAJ&hl=en">https://scholar.google.com</A>
-        <BR><BR></P>
-      </TD>
-      <TD>
-        <IMG width="300" src="files/susu.jpg" border="0">
-      </TD>
-    </TR>
-    <TR></TR></TBODY>
-  </TABLE>
-  <DIV id="layout-content" style="margin-top: 25px;">
+  <!-- Minimal, modern, responsive CSS (no build step) -->
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --bg-elev: #12161b;
+      --text: #e6e8eb;
+      --muted: #9aa3ad;
+      --link: #7cc4ff;
+      --accent: #7c5cff;
+      --chip: #212733;
+      --card: #10151b;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#ffffff; --bg-elev:#f6f8fa; --text:#0b1220; --muted:#5b6673; --link:#0b6bcb; --accent:#5b46ff; --chip:#eef2f7; --card:#ffffff;
+      }
+      .shadow{box-shadow:0 2px 20px rgba(19,22,25,.06)}
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto;display:block;border-radius:14px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:color-mix(in oklab, var(--bg) 92%, transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid color-mix(in oklab, var(--text) 10%, transparent);z-index:50}
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .nav a{padding:10px 12px;border-radius:10px}
+    .nav a:hover{background:color-mix(in oklab,var(--text) 10%, transparent)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 24px var(--accent)}
+    .grid{display:grid;gap:28px}
+    @media (min-width:820px){.grid.cols-2{grid-template-columns:1.25fr .9fr}}
 
+    .hero{padding:28px 0}
+    .title{font-size: clamp(28px, 4vw, 40px); line-height:1.15; margin:0 0 6px}
+    .subtitle{margin:6px 0 14px;color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px; margin:12px 0}
+    .chip{font-size:13px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--text);border:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
 
-  <H2>Biography</H2>
-  <P> I will be joining TikTok as a senior research scientist.
-  </P>  
-  <P> I am currently a postdoctoral associate at the University at Buffalo, working with <A href="https://cse.buffalo.edu/~doermann/"> Prof. David Doermann</A>.
-  </P>
-  <P> In 2024, I received my Ph.D. from <A href="http://lamp.ucas.ac.cn/">LAMP</A> at the University of Chinese Academy of Sciences (UCAS), 
-    where I was advised by <A href="https://scholar.google.com.hk/citations?user=tjEfgsEAAAAJ&hl=zh-CN&oi=ao">Prof. Qixiang Ye</A>. 
-    I earned my B.E. from Jilin University in 2019.      
-  </P>
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 14%, transparent);background:var(--card)}
+    .btn:hover{transform:translateY(-1px)}
 
+    section{margin:34px 0}
+    h2{font-size: clamp(22px, 3vw, 28px); margin:0 0 14px}
+    .card{background:var(--card);border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:16px;padding:18px}
 
-  <P>My research interests include computer vision and LLM, specifically for representation learning and multimodal learning.</P>
+    /* Publications */
+    .pubs{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width:740px){.pubs{grid-template-columns:1fr 1fr}}
+    .pub{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start;border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:14px;padding:12px;background:var(--bg-elev)}
+    .pub .thumb{width:120px;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:#000}
+    .pub .meta b{font-weight:700}
+    .meta .authors{font-size:14px;color:var(--muted)}
+    .meta .venue{display:inline-flex;gap:8px;align-items:center}
+    .venue .pill{font-size:12px;padding:4px 8px;border-radius:999px;background:var(--chip);border:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    .links a{font-size:14px}
 
+    /* Footer */
+    footer{margin:40px 0 10px;color:var(--muted);font-size:14px}
 
+    /* Theme toggle */
+    .toggle{cursor:pointer;border:1px solid color-mix(in oklab, var(--text) 14%, transparent);padding:8px 10px;border-radius:10px;background:var(--card)}
+  </style>
 
-  <H2>Publications</H2>
-    <table class="pub_table">
-    <!-- <tbody> -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yunjie Tian",
+    "alternateName": "田运杰",
+    "jobTitle": "Postdoctoral Associate",
+    "affiliation": {"@type": "Organization", "name": "University at Buffalo"},
+    "email": "mailto:tianyunjie96@gmail.com",
+    "image": "files/susu.jpg",
+    "url": "./",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=DooPOjIAAAAJ&hl=en",
+      "https://github.com/sunsmarterjie"
+    ]
+  }
+  </script>
+</head>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/yolo12.png" class="papericon"></td>
-        <td 
-          class="pub_td2"><u>Yunjie Tian</u>, Qixiang Ye, David Doermann
-          <br><b>YOLOv12: Attention-Centric Real-Time Object Detectors</b>
-          <br>
-          [<a href="https://arxiv.org/abs/2502.12524">Paper</a>]
-          [<a href="https://github.com/sunsmarterjie/yolov12">Code</a>]
-          <br>
-        </td>
-      </tr>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <a href="#top" style="font-weight:700">Yunjie Tian</a>
+      </div>
+      <nav style="display:flex; gap:8px; align-items:center">
+        <a href="#about">About</a>
+        <a href="#pubs">Publications</a>
+        <a href="#contact">Contact</a>
+        <button class="toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">��</button>
+      </nav>
+    </div>
+  </header>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/aks.png" class="papericon"></td>
-        <td 
-          class="pub_td2">Xi Tang, Jihao Qiu, Lingxi Xie, <u>Yunjie Tian</u>, Jianbin Jiao, Qixiang Ye
-          <br><b>Adaptive Keyframe Sampling for Long Video Understanding</b>
-          <br>CVPR, 2025
-          <br>
-          [<a href="https://arxiv.org/pdf/2502.21271">Paper</a>]
-          [<a href="https://github.com/ncTimTang/AKS">Code</a>]
-          <br>
-        </td>
-      </tr>
+  <main id="top" class="container">
+    <!-- HERO -->
+    <section class="hero grid cols-2">
+      <div>
+        <h1 class="title">Yunjie Tian <span style="opacity:.7">· 田运杰</span></h1>
+        <p class="subtitle">Postdoctoral Associate, <a href="https://www.buffalo.edu/" target="_blank" rel="noopener">University at Buffalo</a></p>
+        <div class="chips">
+          <span class="chip">Computer Vision</span>
+          <span class="chip">Multimodal Learning</span>
+          <span class="chip">Representation Learning</span>
+          <span class="chip">Real‑time Detection</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="mailto:tianyunjie96@gmail.com">✉️ Email</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=DooPOjIAAAAJ&hl=en" target="_blank" rel="noopener">�� Google Scholar</a>
+          <a class="btn" href="files/CV_Yunjie_Tian.pdf" target="_blank" rel="noopener">�� CV</a>
+        </div>
+        <p style="margin-top:14px;color:var(--muted)">I will be joining TikTok as a Senior Research Scientist. I am currently working with <a href="https://cse.buffalo.edu/~doermann/" target="_blank" rel="noopener">Prof. David Doermann</a> at UB. I received my Ph.D. from <a href="http://lamp.ucas.ac.cn/" target="_blank" rel="noopener">LAMP, UCAS</a> in 2024, advised by <a href="https://scholar.google.com.hk/citations?user=tjEfgsEAAAAJ" target="_blank" rel="noopener">Prof. Qixiang Ye</a>. B.E. from Jilin University (2019).</p>
+      </div>
+      <div>
+        <img src="files/susu.jpg" alt="Portrait of Yunjie Tian" loading="eager" width="360" />
+      </div>
+    </section>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/artemis.png" class="papericon"></td>
-        <td 
-          class="pub_td2">Jihao Qiu, Yuan Zhang, Xi Tang, Lingxi Xie, Tianren Ma, Pengyu Yan, David Doermann, Qixiang Ye, <u>Yunjie Tian</u>
-          <br><b>Artemis: Towards Referential Understanding in Complex Videos</b>
-          <br>NeurIPS, 2024
-          <br>
-          [<a href="https://arxiv.org/abs/2406.00258">Paper</a>]
-          [<a href="https://github.com/qiujihao19/Artemis">Code</a>]
-          <br>
-        </td>
-      </tr>
+    <!-- ABOUT -->
+    <section id="about" class="grid">
+      <div class="card shadow">
+        <h2>Research Focus</h2>
+        <p>My research spans <strong>vision foundation models</strong>, <strong>multimodal LLMs</strong>, and <strong>efficient real‑time perception</strong>. I design architectures and training strategies that make models <em>faster</em>, <em>more robust</em>, and <em>more interpretable</em> for long videos and dense scenes.</p>
+      </div>
+    </section>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/vheat.png" class="papericon"></td>
-        <td 
-          class="pub_td2">Zhaozhi Wang, Yue Liu, Yunfan Liu, Hongtian Yu, Yaowei Wang, Qixiang Ye, <u>Yunjie Tian</u>
-          <br><b>vHeat: Building Vision Models upon Heat Conduction</b>
-          <br>CVPR, 2025
-          <br>
-          [<a href="https://arxiv.org/abs/2405.16555">Paper</a>]
-          [<a href="https://github.com/MzeroMiko/vHeat">Code</a>]
-          <br>
-        </td>
-      </tr>
-      
+    <!-- PUBLICATIONS -->
+    <section id="pubs">
+      <h2>Selected Publications</h2>
+      <div class="pubs">
+        <!-- YOLOv12 -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/yolo12.png" alt="YOLOv12 thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"><b>Yunjie Tian</b>, Qixiang Ye, David Doermann</div>
+            <div><b>YOLOv12: Attention‑Centric Real‑Time Object Detectors</b></div>
+            <div class="venue"><span class="pill">2025</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2502.12524" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/sunsmarterjie/yolov12" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/clawmachine.png" class="papericon"></td>
-        <td 
-          class="pub_td2">Tianren Ma, Lingxi Xie, <u>Yunjie Tian</u>, Boyu Yang, Qixiang Ye
-          <br><b>ClawMachine: Fetching Visual Tokens as An Entity for Referring and Grounding</b>
-          <br>ICLR, 2025
-          <br>
-          [<a href="https://arxiv.org/abs/2406.11327">Paper</a>]
-          [<a href="https://github.com/martian422/ClawMachine">Code</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- AKS -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/aks.png" alt="AKS thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">Xi Tang, Jihao Qiu, Lingxi Xie, <b>Yunjie Tian</b>, Jianbin Jiao, Qixiang Ye</div>
+            <div><b>Adaptive Keyframe Sampling for Long Video Understanding</b></div>
+            <div class="venue"><span class="pill">CVPR 2025</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/pdf/2502.21271" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/ncTimTang/AKS" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/chatterbox.png" class="papericon"></td>
-        <td 
-          class="pub_td2"><u>Yunjie Tian</u>, Tianren Ma, Lingxi Xie, Qixiang Ye
-          <br><b>ChatterBox: Multi-round Multimidal Referring and Grounding</b>
-          <br>AAAI, 2025
-          <br>
-          [<a href="https://arxiv.org/pdf/2401.13307.pdf">Paper</a>]
-          [<a href="https://github.com/sunsmarterjie/ChatterBox">Code</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- Artemis -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/artemis.png" alt="Artemis thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">Jihao Qiu, Yuan Zhang, Xi Tang, Lingxi Xie, Tianren Ma, Pengyu Yan, David Doermann, Qixiang Ye, <b>Yunjie Tian</b></div>
+            <div><b>Artemis: Towards Referential Understanding in Complex Videos</b></div>
+            <div class="venue"><span class="pill">NeurIPS 2024</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2406.00258" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/qiujihao19/Artemis" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/beyond_masking.png" class="papericon"></td>
-        <td 
-          class="pub_td2"><u>Yunjie Tian</u>, Lingxi Xie, Mengnan Shi, Jiemin Fang, Xiaopeng Zhang, Jianbin Jiao, Qi Tian, Qixiang Ye
-          <br><b>Beyond Masking: Demystifying Token-Based Pre-Training for Vision Transformers</b>
-          <br> Pattern Recognition, 2025
-          <br>
-          [<a href="https://arxiv.org/abs/2203.14313">Paper</a>]
-          [<a href="https://github.com/sunsmarterjie/beyond_masking">Code</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- vHeat -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/vheat.png" alt="vHeat thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">Zhaozhi Wang, Yue Liu, Yunfan Liu, Hongtian Yu, Yaowei Wang, Qixiang Ye, <b>Yunjie Tian</b></div>
+            <div><b>vHeat: Building Vision Models upon Heat Conduction</b></div>
+            <div class="venue"><span class="pill">CVPR 2025</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2405.16555" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/MzeroMiko/vHeat" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/vmamba.png" class="papericon"></td>
-        <td 
-          class="pub_td2">Yue Liu, <u>Yunjie Tian</u>, Yuzhong Zhao, Hongtian Yu, Lingxi Xie, Yaowei Wang, Qixiang Ye, Yunfan Liu
-          <br><b>VMamba: Visual State Space Model</b>
-          <br>NeurIPS, 2024
-          <br>
-          [<a href="https://arxiv.org/abs/2401.10166">Paper</a>]
-          [<a href="https://github.com/MzeroMiko/VMamba">Code</a> (2.4k stars)]
-          <br>
-        </td>
-      </tr>
+        <!-- ClawMachine -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/clawmachine.png" alt="ClawMachine thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">Tianren Ma, Lingxi Xie, <b>Yunjie Tian</b>, Boyu Yang, Qixiang Ye</div>
+            <div><b>ClawMachine: Fetching Visual Tokens as an Entity for Referring and Grounding</b></div>
+            <div class="venue"><span class="pill">ICLR 2025</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2406.11327" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/martian422/ClawMachine" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/fast_itpn.png" class="papericon"></td>
-        <td 
-          class="pub_td2"><u>Yunjie Tian</u>, Lingxi Xie, Jihao Qiu, Jianbin Jiao, Qi Tian, Qixiang Ye
-          <br><b>Fast-iTPN: Integrally Pre-Trained Transformer Pyramid Network with Token Migration</b>
-          <br>TPAMI, 2024
-          <br>
-          [<a href="https://arxiv.org/abs/2211.12735">Paper</a>]
-          [<a href="https://github.com/sunsmarterjie/iTPN/tree/main/fast_itpn">Code</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- ChatterBox -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/chatterbox.png" alt="ChatterBox thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"><b>Yunjie Tian</b>, Tianren Ma, Lingxi Xie, Qixiang Ye</div>
+            <div><b>ChatterBox: Multi‑round Multimodal Referring and Grounding</b></div>
+            <div class="venue"><span class="pill">AAAI 2025</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/pdf/2401.13307.pdf" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/sunsmarterjie/ChatterBox" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
+        <!-- Beyond Masking -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/beyond_masking.png" alt="Beyond Masking thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"><b>Yunjie Tian</b>, Lingxi Xie, Mengnan Shi, Jiemin Fang, Xiaopeng Zhang, Jianbin Jiao, Qi Tian, Qixiang Ye</div>
+            <div><b>Beyond Masking: Demystifying Token‑Based Pre‑Training for Vision Transformers</b></div>
+            <div class="venue"><span class="pill">Pattern Recognition 2025</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2203.14313" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/sunsmarterjie/beyond_masking" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/ifnas.png" class="papericon"></td>
-        <td 
-          class="pub_td2"><u>Yunjie Tian</u>, Lingxi Xie, Jiemin Fang, Jianbin Jiao, Qixiang Ye, Qi Tian
-          <br><b>Exploring Complicated Search Spaces with Interleaving-Free Sampling</b>
-          <br>TNNLS, 2024
-          <br>
-          [<a href="https://arxiv.org/abs/2112.02488">Paper</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- VMamba -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/vmamba.png" alt="VMamba thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">Yue Liu, <b>Yunjie Tian</b>, Yuzhong Zhao, Hongtian Yu, Lingxi Xie, Yaowei Wang, Qixiang Ye, Yunfan Liu</div>
+            <div><b>VMamba: Visual State Space Model</b></div>
+            <div class="venue"><span class="pill">NeurIPS 2024</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2401.10166" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/MzeroMiko/VMamba" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      
-      
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/std.png" class="papericon"></td>
-        <td 
-          class="pub_td2">&ast;Hongtian Yu, &ast;<u>Yunjie Tian</u>, Qixiang Ye, Yunfan Liu
-          <br><b>Spatial Transform Decoupling for Oriented Object Detection</b>
-          <br>AAAI, 2024
-          <br>
-          [<a href="https://arxiv.org/abs/2308.10561">Paper</a>]
-          [<a href="https://github.com/yuhongtian17/Spatial-Transform-Decoupling">Code</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- Fast-iTPN -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/fast_itpn.png" alt="Fast-iTPN thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"><b>Yunjie Tian</b>, Lingxi Xie, Jihao Qiu, Jianbin Jiao, Qi Tian, Qixiang Ye</div>
+            <div><b>Fast‑iTPN: Integrally Pre‑Trained Transformer Pyramid Network with Token Migration</b></div>
+            <div class="venue"><span class="pill">TPAMI 2024</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2211.12735" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/sunsmarterjie/iTPN/tree/main/fast_itpn" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/itpn.png" class="papericon"></td>
-        <td 
-          class="pub_td2"><u>Yunjie Tian</u>, Lingxi Xie, Zhaozhi Wang, Longhui Wei, Xiaopeng Zhang, Jianbin Jiao, Qi Tian, Qixiang Ye
-          <br><b>Integragrally Pre-Trained Transformer Pyramid Networks</b>
-          <br>CVPR, 2023
-          <br>
-          [<a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Tian_Integrally_Pre-Trained_Transformer_Pyramid_Networks_CVPR_2023_paper.pdf">Paper</a>]
-          [<a href="https://www.bilibili.com/video/BV18L411m7jU/?spm_id_from=333.337.search-card.all.click">Pre.</a>]
-          [<a href="https://github.com/sunsmarterjie/iTPN">Code</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- IFNAS -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/ifnas.png" alt="IFNAS thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"><b>Yunjie Tian</b>, Lingxi Xie, Jiemin Fang, Jianbin Jiao, Qixiang Ye, Qi Tian</div>
+            <div><b>Exploring Complicated Search Spaces with Interleaving‑Free Sampling</b></div>
+            <div class="venue"><span class="pill">TNNLS 2024</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2112.02488" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/hivit.png" class="papericon"></td>
-        <td 
-          class="pub_td2">&ast;Xiaosong Zhang, &ast;<u>Yunjie Tian</u>, Lingxi Xie, Wei Huang, Qi Dai, Qixiang Ye, Qi Tian
-          <br><b>HiViT: A Simpler and More Efficient Design of Hierarchical Vision Transformer</b>
-          <br>ICLR, 2023
-          <br>
-          [<a href="https://openreview.net/forum?id=3F6I-0-57SC">Paper</a>]
-          [<a href="https://github.com/zhangxiaosong18/hivit">Code</a>]
-          [<a href="https://arxiv.org/abs/2205.14949">arXiv preprint</a>]
-          <br>
-        </td>
-      </tr>
+        <!-- STD -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/std.png" alt="STD thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">*Hongtian Yu, *<b>Yunjie Tian</b>, Qixiang Ye, Yunfan Liu</div>
+            <div><b>Spatial Transform Decoupling for Oriented Object Detection</b></div>
+            <div class="venue"><span class="pill">AAAI 2024</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2308.10561" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/yuhongtian17/Spatial-Transform-Decoupling" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/graformer.png" class="papericon"></td>
-        <td 
-          class="pub_td2"> Weixi Zhao, Weiqiang Wang, <u>Yunjie Tian</u>
-          <br><b>GraFormer: Graph-Oriented Transformer for 3D Pose Estimation</b>
-          <br> CVPR, 2022
-          <br>
-          [<a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Zhao_GraFormer_Graph-Oriented_Transformer_for_3D_Pose_Estimation_CVPR_2022_paper.pdf">Paper</a>]
-          [<a href="https://github.com/Graformer/GraFormer">Code</a>]
-        </td>
-      </tr>
+        <!-- iTPN -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/itpn.png" alt="iTPN thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"><b>Yunjie Tian</b>, Lingxi Xie, Zhaozhi Wang, Longhui Wei, Xiaopeng Zhang, Jianbin Jiao, Qi Tian, Qixiang Ye</div>
+            <div><b>Integrally Pre‑Trained Transformer Pyramid Networks</b></div>
+            <div class="venue"><span class="pill">CVPR 2023</span></div>
+            <div class="links">
+              <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Tian_Integrally_Pre-Trained_Transformer_Pyramid_Networks_CVPR_2023_paper.pdf" target="_blank" rel="noopener">Paper</a>
+              <a href="https://www.bilibili.com/video/BV18L411m7jU/?spm_id_from=333.337.search-card.all.click" target="_blank" rel="noopener">Presentation</a>
+              <a href="https://github.com/sunsmarterjie/iTPN" target ="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/daas.png" class="papericon"></td>
-        <td 
-          class="pub_td2"><u>Yunjie Tian</u>, Chang Liu, Lingxie Xie, Qixiang Ye
-          <br><b>Discretization-Aware Architecture Search</b>
-          <br> Pattern Recognition, 2021
-          <br>
-          [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320321003733">Paper</a>]
-          [<a href="https://github.com/sunsmarterjie/DAAS">Code</a>]
-        </td>
-      </tr>
+        <!-- HiViT -->
+        <article class="pub">
+            <img class="thumb" src="files/PaperFig/hivit.png" alt="HiViT thumbnail" loading="lazy" />
+            <div class="meta">
+              <div class="authors">*Xiaosong Zhang, *<b>Yunjie Tian</b>, Wei Huang, Lingxi Xie, Qi Dai, Qixiang Ye, Qi Tian</div>
+              <div><b>HiViT: A Simpler and More Efficient Design of Hierarchical Vision Transformer</b></div>
+              <div class="venue"><span class="pill">ICLR 2023</span></div>
+              <div class="links">
+                <a href="https://openreview.net/forum?id=3F6I-0-57SC" target="_blank" rel="noopener">Paper</a>
+                <a href="https://github.com/zhangxiaosong18/hivit" target="_blank" rel="noopener">Code</a>
+                <a href="https://arxiv.org/abs/2205.14949" target="_blank" rel="noopener">arXiv</a>
+              </div>
+            </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/sage.png" class="papericon"></td>
-        <td 
-          class="pub_td2"> <u>Yunjie Tian</u>, Lingxi Xie, Xiaopeng Zhang, Jiemin Fang, Haohang Xu, Wei Huang, Jianbin Jiao, Qi Tian, Qixiang Ye
-          <br><b>Semantic-Aware Generation for Self-Supervised Visual Representation Learning</b>
-          <br>
-          [<a href="https://arxiv.org/pdf/2111.13163.pdf">Paper</a>]
-          [<a href="https://github.com/sunsmarterjie/SaGe">Code</a>]
-        </td>
-      </tr>
+        <!-- GraFormer -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/graformer.png" alt="GraFormer thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">Weixi Zhao, Weiqiang Wang, <b>Yunjie Tian</b></div>
+            <div><b>GraFormer: Graph‑Oriented Transformer for 3D Pose Estimation</b></div>
+            <div class="venue"><span class="pill">CVPR 2022</span></div>
+            <div class="links">
+              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Zhao_GraFormer_Graph-Oriented_Transformer_for_3D_Pose_Estimation_CVPR_2022_paper.pdf" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/Graformer/GraFormer" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-      <tr>
-        <td class="pub_td1"><img src="files/PaperFig/adalsn.png" class="papericon"></td>
-        <td 
-          class="pub_td2">&ast;Chang Liu, &ast;<u>Yunjie Tian</u>, Zhiwen Chen, Jianbin Jiao, Qixiang Ye
-          <br><b>Adaptive Linear Span Network for Object Skeleton Detection</b>
-          <br> TIP, 2021
-          <br>
-          [<a href="https://arxiv.org/pdf/2011.03972.pdf">arXiv preprint</a>]
-          [<a href="https://github.com/sunsmarterjie/SDL-Skeleton">Code</a>]
-        </td>
-      </tr>
+        <!-- DAAS -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/daas.png" alt="DAAS thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"><b>Yunjie Tian</b>, Chang Liu, Lingxi Xie, Qixiang Ye</div>
+            <div><b>Discretization‑Aware Architecture Search</b></div>
+            <div class="venue"><span class="pill">Pattern Recognition 2021</span></div>
+            <div class="links">
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320321003733" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/sunsmarterjie/DAAS" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-    <!-- </tbody> -->
-    </table>
-    
-  
-  <br> <br> 
-  <H2>Statistics</H2>
-  <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5063gq35g0n&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+        <!-- SaGe -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/sage.png" alt="SaGe thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors"> <b>Yunjie Tian</b>, Lingxi Xie, Xiaopeng Zhang, Jiemin Fang, Haohang Xu, Wei Huang, Jianbin Jiao, Qi Tian, Qixiang Ye</div>
+            <div><b>Semantic‑Aware Generation for Self‑Supervised Visual Representation Learning</b></div>
+            <div class="venue"><span class="pill">Preprint</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/pdf/2111.13163.pdf" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/sunsmarterjie/SaGe" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-</BODY>
-</HTML>
+        <!-- ADALSN -->
+        <article class="pub">
+          <img class="thumb" src="files/PaperFig/adalsn.png" alt="ADALSN thumbnail" loading="lazy" />
+          <div class="meta">
+            <div class="authors">*Chang Liu, *<b>Yunjie Tian</b>, Zhiwen Chen, Jianbin Jiao, Qixiang Ye</div>
+            <div><b>Adaptive Linear Span Network for Object Skeleton Detection</b></div>
+            <div class="venue"><span class="pill">TIP 2021</span></div>
+            <div class="links">
+              <a href="https://arxiv.org/pdf/2011.03972.pdf" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/sunsmarterjie/SDL-Skeleton" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contact" class="grid">
+      <div class="card shadow">
+        <h2>Contact</h2>
+        <p>Room 301B, Davis Hall<br>Department of Computer Science and Engineering<br>University at Buffalo, SUNY<br>Buffalo, NY 14260, USA</p>
+        <p>Email: <a href="mailto:tianyunjie96@gmail.com">tianyunjie96@gmail.com</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <span>© <span id="year"></span> Yunjie Tian</span>
+          <span>Built with semantic HTML & pure CSS • Dark‑mode friendly • No trackers</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Theme toggle (persist)
+    const key = 'yt-theme';
+    const toggle = document.getElementById('themeToggle');
+    const apply = (t)=>{
+      if(t==='light'){document.documentElement.style.colorScheme='light';}
+      else if(t==='dark'){document.documentElement.style.colorScheme='dark';}
+      else{document.documentElement.style.colorScheme='normal';}
+    }
+    const saved = localStorage.getItem(key);
+    if(saved) apply(saved);
+    toggle.addEventListener('click', ()=>{
+      const cur = localStorage.getItem(key) || (matchMedia('(prefers-color-scheme: dark)').matches? 'dark':'light');
+      const next = cur==='dark' ? 'light' : 'dark';
+      localStorage.setItem(key, next); apply(next);
+    });
+  </script>
+</body>
+</html>
